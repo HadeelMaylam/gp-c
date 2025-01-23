@@ -3,15 +3,13 @@ import streamlit as st
 import anthropic
 import aiohttp
 import asyncio
-from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from langchain_community.utilities import GoogleSearchAPIWrapper
 
-load_dotenv()
-
-ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-GOOGLE_CSE_ID = os.getenv("GOOGLE_CSE_ID")
+# جلب المفاتيح السرية من إعدادات Streamlit Cloud
+ANTHROPIC_API_KEY = st.secrets["ANTHROPIC_API_KEY"]
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+GOOGLE_CSE_ID = st.secrets["GOOGLE_CSE_ID"]
 
 google_search = GoogleSearchAPIWrapper(
     google_api_key=GOOGLE_API_KEY,
