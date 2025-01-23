@@ -1,0 +1,7 @@
+os
+python-dotenv
+streamlit
+anthropic
+aiohttp
+beautifulsoup4
+langchain-community
